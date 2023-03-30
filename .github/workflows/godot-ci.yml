@@ -36,7 +36,7 @@ jobs:
           cd $PROJECT_PATH
           mkdir -v -p .godot/editor
           mkdir -v -p .godot/imported
-          godot -v --headless --export-release "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
+          godot -v --headless --export-release "Linux" ../build/linux/$EXPORT_NAME.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
