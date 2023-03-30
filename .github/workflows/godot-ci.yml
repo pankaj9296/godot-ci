@@ -21,8 +21,8 @@ jobs:
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           mkdir -v -p ~/.local/share/godot/export_templates
-          cp /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
-          cp /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+          cp -r /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
+          cp -r /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
