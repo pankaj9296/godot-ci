@@ -24,6 +24,8 @@ jobs:
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
+          mkdir -v -p .godot/editor
+          mkdir -v -p .godot/imported
           wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
           dpkg -i packages-microsoft-prod.deb
           rm packages-microsoft-prod.deb
@@ -32,6 +34,8 @@ jobs:
           apt-get update -qq
           apt-get install -y dotnet-sdk-6.0
           cd $PROJECT_PATH
+          mkdir -v -p .godot/editor
+          mkdir -v -p .godot/imported
           godot -v --headless --export-release "Linux/X11" ../build/linux/$EXPORT_NAME.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
